@@ -1,0 +1,40 @@
+<script>
+
+function myCubeBetter(x){
+return x*x*x
+}
+</script>
+
+<input id="myName01" type=text value="3" >
+
+<div id="myDivOut01">..</div>
+
+<input type=button value="Cube the number" onClick="{
+ document.getElementById('myDivOut01').innerHTML =
+ myCubeBetter(document.getElementById('myName01').value);
+ }" >
+
+<Br><Br><input id="myName02" type=text value="Chelsie" >
+
+<div id="myDivOut02">...</div>
+
+<input type=button value="Click" onClick="{
+
+ document.getElementById('myDivOut02').innerHTML =
+
+ 'Can\'t ' + document.getElementById('myName02').value + ' swim?'
+
+ }" >
+
+<script>
+
+function myCube(myY){
+  return myY * myY * myY
+}
+
+// Main Program activated here after all the scripts
+
+myX = prompt('Cube', '3')
+document.writeln(myX + 'cubed= ' + myCube(myX))
+
+</script>

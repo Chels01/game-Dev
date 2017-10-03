@@ -1,0 +1,69 @@
+<h2 align=center> Javascript By Chelsie</h2>
+
+Enter your name: <input id="myText01" type=text value=Chelsie>
+
+<input type=button value="click me" onClick="{
+
+
+ // alert(document.all.myText01.value)
+
+ // alert(document.getElementById('myText01').value)
+
+ document.getElementById('MyDiv01').innerHTML = (document.getElementById('myText01').value)
+
+
+}" >
+
+<div id="MyDiv01" style="font-size:40px;"> writing here</div>
+
+ 
+<br>Enter your number to square: <input id="myText02" type=text value=1> 
+
+<input type=button value="Square" onClick="{
+
+document.getElementById('MyDiv02').innerHTML = document.getElementById('myText02').value * document.getElementById('myText02').value
+
+
+}" >
+
+
+<div id="MyDiv02" style="font-size:40px;">1</div>
+
+
+<Br> How are you feeling?: <input id="myText03" type=text placeholder="Sad">
+
+
+<div id="MyDiv03" style="font-size:40px;"> .... </div>
+
+<input type=button value="click me" onClick="{
+
+//alert(document.getElementById('myText03').value)
+
+
+ if (document.getElementById('myText03').value == '') {
+
+     alert('enter a feeling') 
+   } else { 
+
+   document.getElementById('MyDiv03').innerHTML = 'So you are feeling ' + document.getElementById('myText03').value + '?' 
+  }
+
+}" >
+
+ 
+<Br><Br>
+
+<input id="myText04" type=text value=Chelsie>
+
+<div id="myDiv04">....</div>
+
+<input type=button value="click me" onClick="{
+
+document.getElementById('MyDiv04').innerHTML =
+
+'wow ' + document.getElementById('myText04').value + ' wow'
+
+}">
+
+
+
