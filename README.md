@@ -1,5 +1,5 @@
 # game-Dev
-Game-devrepo
+Game-dev
 
 
  this is my website
