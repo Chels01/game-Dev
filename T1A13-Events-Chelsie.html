@@ -1,0 +1,292 @@
+
+
+
+
+
+
+
+
+
+
+<body onkeydown="{
+       document.getElementById('myDiv01')
+.innerHTML =  
+                'onkeydown event sent the letter '+String.fromCharCode(event.keyCode)
+  }">
+
+<h2 align=center>Events by Chelsie</h1>
+<ol>
+
+<li> type a key
+
+<li><input type=button value="onClick" onclick="{
+
+    
+    document.getElementById('myDiv01')
+.innerHTML =  'onClick event activated'
+  
+}">
+
+<li><input type=button value="onMouseOver" onMouseOver="{
+
+    
+    document.getElementById('myDiv01')
+.innerHTML =  'onMouseOver event activated'
+  
+}">
+
+
+
+
+
+<div id="myDiv01">...</div>
+
+
+
+
+
+
+<br><br>5.<button ondblclick="myDbl()">Double-click me</button>
+
+<p id="demo"></p>
+
+
+
+<script>
+function myDbl() {
+    document.getElementById("demo").innerHTML = "Hello World";
+}
+</script>
+
+
+
+
+6.<input type=button value="onWheel" onwheel="{
+
+    
+    document.getElementById('myDiv01').innerHTML =  'onWheel event activated'
+  
+}">
+
+
+
+
+
+<br><br><form action="" method="get">
+ 7. Name: <input type="text" oninvalid="alert('You must fill out the form!');" name="fname" required>
+  <input type="submit" value="Submit">
+</form>
+
+
+<script>
+function myLoad() {
+    alert("Page is loaded");
+}
+</script>
+</head>
+
+<body onload="myLoad()">
+8.OnLoad<h1>Hello World!</h1>
+
+<br><br>9.Enter your name: <input type="text" name="fname01" id="fname01" onblur="myBlur()">
+
+<script>
+function myBlur() {
+    var x = document.getElementById("fname01");
+    x.value = x.value.toUpperCase();
+}
+</script>
+
+<form onreset="myReset()">
+  10.Enter name: <input type="text">
+  <input type="reset">
+</form>
+
+<script>
+function myReset() {
+    alert("The form was reset");
+}
+</script>
+
+11.First name: <input type="text" id="fname" onfocus="myFunction(this.id)"><br>
+Last name: <input type="text" id="lname" onfocus="myFunction(this.id)">
+
+<script>
+function myFunction(x) {
+    document.getElementById(x).style.background = "yellow";
+}
+</script>
+
+<style>
+div {
+    background: yellow;
+    border: 1px solid black;
+    padding: 10px;
+}
+</style>
+</head>
+
+<div oncontextmenu="myFunction()" contextmenu="mymenu">
+12.<p>Right-click inside this box to see the context menu!
+
+<menu type="context" id="mymenu">
+  <menuitem label="Refresh" onclick="window.location.reload();" icon="ico_reload.png"></menuitem>
+  <menu label="Share on...">
+    <menuitem label="Twitter" icon="ico_twitter.png" onclick="window.open('//twitter.com/intent/tweet?text=' + window.location.href);"></menuitem>
+    <menuitem label="Facebook" icon="ico_facebook.png" onclick="window.open('//facebook.com/sharer/sharer.php?u=' + window.location.href);"></menuitem>
+  </menu>
+  <menuitem label="Email This Page" onclick="window.location='mailto:?body='+window.location.href;"></menuitem>
+</menu>
+
+</div>
+
+
+
+<br><br>13.<input type="text" oncut="myCut()" value="Try to cut this text">
+
+<p id="demo01"></p>
+
+<script>
+function myCut() {
+    document.getElementById("demo01").innerHTML = "You cut text!";
+}
+</script>
+
+<style>
+#myDIV {
+    border: 1px solid black;
+    width: 200px;
+    height: 100px;
+    overflow: scroll;
+}
+</style>
+</head>
+<body>
+
+<style>
+#myDIV {
+    border: 1px solid black;
+    width: 200px;
+    height: 100px;
+    overflow: scroll;
+}
+</style>
+</head>
+<body>
+
+<p>Try the scrollbar in div.</p>
+
+14.<div id="myDIV" onscroll="myFunction()"><br><br>Hi Person welcome to my website, you can use the event codes that are there.
+<br><br>
+</div>
+
+<script>
+function myFunction() {
+    document.getElementById("myDIV").style.color = "red";
+}
+</script>
+
+<p>A function is triggered when you scroll in div. The function sets the color of the text in div to red.</p>
+
+<style>
+.droptarget {
+    float: left; 
+    width: 100px; 
+    height: 35px;
+    margin: 15px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+</style>
+</head>
+<body>
+
+<p>15.Drag the p element back and forth between the two rectangles:</p>
+
+<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <p ondragstart="dragStart(event)" ondrag="dragging(event)" draggable="true" id="dragtarget">Hi</p>
+</div>
+
+<div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+<p style="clear:both;"><strong>Note:</strong> drag events are not supported in Internet Explorer 8 and earlier versions or Safari 5.1 and earlier versions.</p>
+
+<p id="demo"></p>
+
+<script>
+function dragStart(event) {
+    event.dataTransfer.setData("Text", event.target.id);
+}
+
+function dragging(event) {
+    document.getElementById("demo").innerHTML = "The p element is being dragged";
+}
+
+function allowDrop(event) {
+    event.preventDefault();
+}
+
+function drop(event) {
+    event.preventDefault();
+    var data = event.dataTransfer.getData("Text");
+    event.target.appendChild(document.getElementById(data));
+    document.getElementById("demo").innerHTML = "The p element was dropped";
+}
+</script>
+
+<style>
+.droptarget {
+    float: left; 
+    width: 100px; 
+    height: 35px;
+    margin: 15px;
+    margin-right: 100px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+</style>
+
+<body onresize="myFunction()">
+
+<p>16.Try to resize the browser window.</p>
+
+<script>
+function myFunction() {
+    alert("You have changed the size of the browser window!");
+}
+</script>
+
+<p>17.Select a new car from the list.</p>
+
+<select id="mySelect" onchange="myFunction()">
+  <option value="Hi">Hi
+  <option value="Yo">Yo
+  <option value="Hello">Hello
+  <option value="Hola">Hola
+</select>
+
+<p>When you select a word, a function is triggered which outputs the value of the selected car.</p>
+
+<p id="demo"></p>
+
+<script>
+function myFunction() {
+    var x = document.getElementById("mySelect").value;
+    document.getElementById("demo").innerHTML = "You selected: " + x;
+}
+</script>
+
+18.<input type="text" oncopy="myFunction()" value="Try to copy this text">
+
+<p id="demo02"></p>
+
+<script>
+function myFunction() {
+    document.getElementById("demo02").innerHTML = "You copied text!"
+}
+</script>
+
+</body>
+</html>
+
+<div id="myDiv01">...</div>
