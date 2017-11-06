@@ -1,0 +1,168 @@
+<h2 align=center>Calculator by Chelsie...</h2>
+
+<input id="myText01"  type=text value="3"  > 
+<input id="myText02"  type=text value="+"  > 
+<input id="myText03"  type=text value="4"  > <br>
+
+Text box 1=<table border=1>
+<td><input type=button value=" 0 " onClick="{
+document.getElementById('myText01').value += 0 
+}" >
+</td>
+<td><input type=button value=" 1 " onClick="{ 
+document.getElementById('myText01').value += 1
+}" >
+</td>
+<td><input type=button value=" 2 " onClick="{ 
+document.getElementById('myText01').value += 2
+}" >
+</td>
+<td><input type=button value=" 3" onClick="{ 
+document.getElementById('myText01').value += 3  
+}" >
+</td>
+<td><input type=button value=" 4 " onClick="{
+document.getElementById('myText01').value += 4 
+}" >
+</td>
+<td><input type=button value=" 5 " onClick="{
+document.getElementById('myText01').value += 5 
+}" >
+</td>
+<td><input type=button value=" 6 " onClick="{
+document.getElementById('myText01').value += 6 
+}" >  
+</td> 
+<td>   
+<input type=button value=" 7 " onClick="{
+document.getElementById('myText01').value += 7  
+}" >
+</td>
+<td><input type=button value=" 8 " onClick="{
+document.getElementById('myText01').value += 8  
+ }" >
+</td> 
+<td><input type=button value=" 9 " onClick="{
+document.getElementById('myText01').value += 9
+}" >
+</td>
+</table>
+
+Text box 2=<table border=1>
+<td>
+<input type=button value=" + " onclick="{ document.getElementById('myText02').value = '+' 
+}">
+</td>
+
+<td><input type=button value=" / " onClick="{ document.getElementById('myText02').value = '/' 
+ }" > 
+</td>
+<td><input type=button value=" - " onClick="{ document.getElementById('myText02').value = '-'
+ }" > 
+</td>
+<td><input type=button value=" < " onClick="{ document.getElementById('myText02').value = '<' 
+ }" > 
+</td>
+<td><input type=button value=" > " onClick="{ document.getElementById('myText02').value = '>'
+ }" > 
+</td>
+</table>
+
+Text box 3=<table border=1>
+<td><input type=button value=" 0 " onClick="{
+document.getElementById('myText03').value += 0 
+}" >
+</td>
+<td><input type=button value=" 1 " onClick="{ 
+document.getElementById('myText03').value += 1
+}" >
+</td>
+<td><input type=button value=" 2 " onClick="{ 
+document.getElementById('myText03').value += 2
+}" >
+</td>
+<td><input type=button value=" 3" onClick="{ 
+document.getElementById('myText03').value += 3  
+}" >
+</td>
+<td><input type=button value=" 4 " onClick="{
+document.getElementById('myText03').value += 4 
+}" >
+</td>
+<td><input type=button value=" 5 " onClick="{
+document.getElementById('myText03').value += 5 
+}" >
+</td>
+<td><input type=button value=" 6 " onClick="{
+document.getElementById('myText03').value += 6 
+}" >  
+</td> 
+<td>   
+<input type=button value=" 7 " onClick="{
+document.getElementById('myText03').value += 7  
+}" >
+</td>
+<td><input type=button value=" 8 " onClick="{
+document.getElementById('myText03').value += 8  
+ }" >
+</td> 
+<td><input type=button value=" 9 " onClick="{
+document.getElementById('myText03').value += 9
+}" >
+</td>
+</table>
+
+<input type=button value=" = " onClick="{ 
+
+   myNum1 = parseFloat(document.getElementById('myText01').value)
+   mySign = document.getElementById('myText02').value
+   myNum2 = parseFloat(document.getElementById('myText03').value)
+ 
+    myTotal = 0
+
+    if (mySign == '+'){
+      myTotal = myNum1 + myNum2
+   }
+
+   else if (mySign == '-'){
+      myTotal = myNum1 - myNum2
+   }
+
+else if (mySign == '*'){
+      myTotal = myNum1 * myNum2
+   }
+
+else if (mySign == '/'){
+      myTotal = myNum1 / myNum2
+   }
+
+else if (mySign == '<'){
+      myTotal = myNum1 < myNum2
+
+   }
+
+else if (mySign == '>'){
+      myTotal = myNum1 < myNum2
+   }
+
+else if (mySign == '^'){
+      myTotal = myNum1 ^ myNum2
+   }
+
+
+
+      document.getElementById('myDiv01').innerHTML =  
+                    myNum1 + mySign +  myNum2 + ' = ' + myTotal + '<br>' +
+                    document.getElementById('myDiv01').innerHTML
+  
+
+}" >
+
+<input type=button value="Clear All" onClick="{  
+    document.getElementById('myText01').value =  '' 
+    document.getElementById('myText02').value =  '' 
+    document.getElementById('myText03').value =  '' 
+    document.getElementById('myDiv01').innerHTML =  '' 
+}" >
+
+<div id="myDiv01">....<br></div>
