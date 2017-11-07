@@ -18,10 +18,9 @@ Loop this amount <input id="myText01" type=number value=5>
  myArray = new Array()
 
 for(myLoop = 1; myLoop <=document.getElementById('myText01').value; myLoop++){
+   myArray[myLoop] = Math.round(Math.random()*10)
 
- document.getElementById('myDiv01').innerHTML += myLoop +
-
-  myArray[1] = Math.round(Math.random()*10)
+  document.getElementById('myDiv01').innerHTML += myLoop + myArray[myLoop] 
   
  }
 
@@ -30,14 +29,14 @@ for(myLoop = 1; myLoop <=document.getElementById('myText01').value; myLoop++){
 <input type=button value="ShowArray" onclick="{
  
  myTemp=''
-
- for(myLoop = 1; myLoop <=document.getElementById('myText01').value; myLoop++){
+alert(myArray)
+ //for(myLoop = 1; myLoop <= document.getElementById('myText01').value; myLoop++){
   
-  myTemp +=myArray['+myLoop+']= ' + myArray[myLoop] + '<br>'
+ // myTemp +=myArray['+myLoop+']= ' + myArray[myLoop] + '<br>'
 
- }
+//}
 
-document.getElementById('myDiv01').innerHTML = myTemp
+//document.getElementById('myDiv01').innerHTML = myTemp
 
 
 
