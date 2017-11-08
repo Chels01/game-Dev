@@ -1,25 +1,43 @@
 <script>
-  function myStudent(myAge, MyName, myImage){
+  function myStudent(myAge, myName, myImage){
+
   this.myStudentAge = myAge
-   this.myStudentName = myName
-    this.myStudentImage = myImage
-     this.myShowInfo = function (){
-       document.getElementById('myDiv1').innerHTML += 'my name is ' + this.StudentName + '<br>'
-     };
-     }
+
+  this.myStudentName = myName
+
+   this.myStudentImage = myImage
+
+    this.myShowInfo = function(){
+
+    document.getElementById('myDiv01').innerHTML += 'My name is ' + this.myStudentName + '. My age is ' +this.myStudentAge + '<br>'
+   };
+
+
+  }
+
 </script>
 
-<input type=button value="Set Fred" onclick="{
-   myFred = new MyStudent(20, 'fred')
+<input type=button value="Set Fred" onClick="{
+ myFred = new myStudent(20, 'Fred','http')
+
 }">
 
-<input type=button value="Show Fred" onclick="{
+
+
+<input type=button value="Show Fred" onClick="{
  myFred.myShowInfo()
+
  }">
 
- <input type=button value="Set And Show Mary" onclick="{
-   myMary = new MyStudent(18, 'Mary','http')
+
+
+ <input type=button value="Set And Show Mary" onClick="{
+   myMary = new myStudent(18, 'Mary','http')
    myMary.myShowInfo()
+
  }">
 
- <div id='myDiv1'>...<br></div>
+
+
+<div id='myDiv01'>...<br></div>
+
