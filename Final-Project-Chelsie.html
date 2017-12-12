@@ -1,0 +1,178 @@
+<body id="myBody"  style=" background-size: 2000px  1000px;  background-image: url('background2.png'); background-repeat :   repeat-x;"  onkeydown="{
+
+
+
+
+if (String.fromCharCode(event.keyCode) =='W'){
+   document.getElementById('myMermaid').style.top = parseInt(document.getElementById('myMermaid').style.top) + -20 +'px'
+  
+   if ( parseInt(document.getElementById('myMermaid').style.top) <= 0){
+     document.getElementById('myMermaid').style.top ='0px'
+   }
+
+}
+
+
+
+if (String.fromCharCode(event.keyCode) =='S'){ document.getElementById('myMermaid').style.top = parseInt(document.getElementById('myMermaid').style.top) + 20 +'px'
+   
+if ( parseInt(document.getElementById('myMermaid').style.top) >=700){
+     document.getElementById('myMermaid').style.top = '700px'
+   }
+
+  }
+
+
+
+document.getElementById('myOut02').innerHTML = document.getElementById('myMermaid').style.left + ' ,  '+ document.getElementById('myFish1').style.left
+
+        if (parseInt(document.getElementById('myMermaid')
+.style.left) <= 0 ){document.getElementById('myMermaid')
+.style.left = '10px'} 
+
+
+
+
+}">
+
+<input type=button value="Play" onclick="{
+       myX = 0
+       myY = 0
+       myCounter1 = setInterval(function(){   
+             myX += -4;
+             myY += 0;
+             document.getElementById('myBody').style.backgroundPosition = myX + 'px '+ myY+'px';
+
+             document.getElementById('myFish1').style.left = parseInt( document.getElementById('myFish1').style.left) - 10 + 'px'
+             document.getElementById('myFish2').style.left = parseInt( document.getElementById('myFish2').style.left) - 9 + 'px'
+             document.getElementById('myFish3').style.left = parseInt( document.getElementById('myFish3').style.left) - 8 + 'px'
+             document.getElementById('myFish4').style.left = parseInt( document.getElementById('myFish4').style.left) - 7 + 'px'
+              document.getElementById('myFish5').style.left = parseInt( document.getElementById('myFish5').style.left) - 6 + 'px'
+
+if (myCollide('myMermaid', 'myFish1')  == true) {
+   document.getElementById('myOut02').innerHTML =  'You ate a fish!'
+   document.getElementById('myFish1').style.left  = '-200px'
+   addOne()
+   
+}
+    
+
+if (myCollide('myMermaid', 'myFish2')  == true) {
+   if(counter == 1){
+   document.getElementById('myOut02').innerHTML =  'You ate a fish!'
+   document.getElementById('myFish2').style.left  = '-200px'
+   addOne()
+  }
+}
+
+
+if (myCollide('myMermaid', 'myFish3')  == true) {
+   if(counter == 2){
+   document.getElementById('myOut02').innerHTML =  'You ate a fish!'
+   document.getElementById('myFish3').style.left  = '-200px'
+   addOne()
+   }
+}
+
+if (myCollide('myMermaid', 'myFish4')  == true) {
+   if(counter == 3){
+   document.getElementById('myOut02').innerHTML =  'You ate a fish!'
+   document.getElementById('myFish4').style.left  = '-200px'
+   addOne()
+ }
+}
+
+if (myCollide('myMermaid', 'myFish5')  == true) {
+   if(counter == 4){
+   document.getElementById('myOut02').innerHTML =  'You ate a fish!'
+   document.getElementById('myFish5').style.left  = '-200px'
+   addOne()
+
+   alert('You Win')
+
+location ='https://www.google.ca/'
+
+
+  }
+}
+     
+
+
+      }, 30);    // every 30 milliseconds
+
+}">
+
+
+
+
+<input type=button value="Go" onclick="{
+  location ='https://www.google.ca/'
+}">
+
+
+
+
+<input type=button value="Stop" onclick="{
+   clearInterval( myCounter1)
+   alert('Background stopped at position ' +document.getElementById('myBody').style.backgroundPosition)
+
+}">
+
+
+<img id="myMermaid" src="Pixel-Character-for-game-Lorge.gif"  style="position:absolute; width:300px; height:200px; left:100px; top:330px" > 
+
+
+<img id="myFish1" src="Fish1b.png"  style="position:absolute; width:50px; height:50px; left:1000px; top:30px" > 
+
+<img id="myFish2" img src="Fish2b.png" style="position:absolute; top:500; left:2000;width:100;height:100;">
+
+<img id="myFish3" img src="Fish3b.png" style="position:absolute; top:29; left:3000;width:100;height:100;">
+
+<img id="myFish4" img src="Fish4b.png" style="position:absolute; top:200; left:4000;width:100;height:100;">
+
+<img id="myFish5" img src="Fish5b.png" style="position:absolute; top:10; left:5000;width:100;height:100;">
+
+
+
+
+
+
+
+
+<script>
+
+document.counter = 0;
+
+function addOne(){ 
+document.counter = document.counter + 1;
+document.getElementById('counter').innerHTML = document.counter;
+}
+
+
+function myCollide(my1, my2){
+                                        
+
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1   + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my2).style.left)
+   right2  = left2 + parseInt(document.getElementById(my2).style.width)
+   top2    = parseInt(document.getElementById(my2).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my2).style.height)
+   if ((right1  >=  left2  ) && (bottom1 >=  top2   ) && (left1   <=  right2 ) && (top1    <=  bottom2) ){
+       return true
+   }
+}
+
+
+</script>
+
+
+
+<div id="myOut02">...</div>
+<span>Fish Eaten: </span><span id="counter">...</span>
+<br>
+<br>
+
+USE WS
