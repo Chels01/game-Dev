@@ -18861,5 +18861,11 @@ cr.getObjectRefTable = function () { return [
 	cr.system_object.prototype.acts.AddVar,
 	cr.plugins_.Keyboard.prototype.cnds.IsKeyDown,
 	cr.behaviors.EightDir.prototype.acts.SimulateControl,
-	cr.system_object.prototype.acts.CreateObject
+	cr.system_object.prototype.cnds.ForEach,
+	cr.plugins_.Sprite.prototype.acts.RotateTowardPosition,
+	cr.plugins_.Sprite.prototype.exps.X,
+	cr.plugins_.Sprite.prototype.exps.Y,
+	cr.system_object.prototype.acts.ResetGlobals,
+	cr.system_object.prototype.acts.RestartLayout,
+	cr.system_object.prototype.cnds.CompareVar
 ];};
